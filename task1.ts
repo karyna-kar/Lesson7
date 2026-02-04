@@ -14,4 +14,15 @@ const deleteDublicates = (arr: number[]) => {
   return result;
 };
 
+const deleteDuplicatesOption2 = (arr: number[]) => {
+  const result: Record<string, number> = {};
+  for (const element of arr) {
+    if (!result[element]) {
+      result[element] = element;
+    }
+  }
+  return Object.values(result);
+};
+
 console.log(deleteDublicates(array));
+console.log(deleteDuplicatesOption2(array));
